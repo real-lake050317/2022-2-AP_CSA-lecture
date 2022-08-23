@@ -1,0 +1,37 @@
+Software 정의: 
+1. Set of Instructions (명령어들의 집합)
+명령어: CPU가 실행할 수 있는 코드
+CPU가 실행할 수 있는 연산: 산술연산, 논리연산
+
+2. 알고리즘과 데이터 구조의 결합체
+알고리즘: 문제 해결 절차
+간단한 알고리즘: 연산이 적음
+복잡한 알고리즘: 연산이 많음
+
+floating point number는 유효자리 숫자가 정해져 있음,
+실수가 아니라 실수형
+
+primitive data type 중 실수형: float, double
+실수를 사용하지 못하는 이유: 하드웨어 리소스가 유한하기 때문에
+
+데이터 구조: 데이터를 어떻게 저장하는가
+
+Big-O notation/analysis
+O(n) linear search time
+
+Compiler-level primative data type: 8 types
+boolean(1), char(2) / byte(1), short(2), int(4), long(8) / float(4), double(8)
+
+char: UNICODE 사용
+
+float: 1 + 8 + 23
+2^23 ~= 10^7.xx
+double: 1+ 11 + 52
+2^52 ~= 10^15.xx
+
+single precision: 단정도
+double precision: 배정도
+
+Hierachy
+
+Data Structure > Data Type > Primitive DT, Reference Type
