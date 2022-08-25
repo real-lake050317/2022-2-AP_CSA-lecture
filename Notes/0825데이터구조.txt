@@ -119,3 +119,5 @@ C언어: 컴파일러가 매우 hardware dependant
 C++: OOP 언어, C보다 속도가 느림 
 속도 vs 유지보수 -> 사이에서 타협 해야 함, 둘 다 잡을 수는 없음
 execution speed vs OOP
+
+SUN에서 제작해준 class를 API라고 함 -> JAVA에서 제공
