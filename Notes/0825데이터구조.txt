@@ -1,0 +1,121 @@
+데이터 구조: 데이터를 어떻게 저장하는가?
+소프트웨어: 알고리즘과 데이터구조의 집합체 (알고리즘: 문제해결 절차)
+
+데이터를 어떻게 저장해서 CPU가 연산하는가? -> 성능에 critical
+
+알고리즘의 성능을 개선시키는 방법이 두가지 -> 알고리즘 개선 or 데이터 구조 개선
+
+Primative DT: JAVA에서 8가지
+
+boolean, char, byte, short, int, long, float, double
+
+explicit casting, implicit casting
+
+implicit casting: byte -> int (low -> high)
+explicit casting: ex. int -> byte (high -> low)
+
+int a; -> declaration
+int: reserved keyword (JAVA에 대략 40개)
+a: identifier, a는 integer의 identifier로만 사용된다
+int a; : statement
+
+메모리 구조: 첫번째 바이트부터 마지막 바이트까지 연속적으로 연결되어 있음.
+메모리 주소: n바이트의 메모리에서 0부터 n - 1까지
+
+메모리 할당, 메모리 할당 해제 -> JVM이 담당함
+
+int a; 로 integer가 선언되면,
+4바이트를 할당.
+
+int a;
+a = 3; -> initialization, 초기화
+할당된 4바이트를 이용해 3을 저장
+
+int a = 3; 
+3: constant, =: 대입 연산자 (assignment operator, 우선순위 최하위)
+
+DS > DT > PDT & RDT
+
+Reference Type
+PDT: 값을 저장
+RDT: 주소값을 저장
+주소 저장에는 4byte 사용
+
+RDT: 대표적으로 배열
+
+1. 배열: 동일한 데이터 타입 n개를 한개의 identifier로 access 하기 위해 만들어진 DS
+
+JAVA: int[] b = new int[10]; 로 배열 선언
+
+assignment operator가 가장 늦게 실행
+
+오른쪽의 new int[10]; 이 먼저 실행
+new operator는 memory allocation operator
+메모리를 할당하는 연산자
+얼마나?
+
+int[10] 만큼
+10개 * int를 저장할 수 있을만큼
+10*sizeof(int)
+
+b는 주소를 저장할 수 있는 identifier
+모든 reference는 4byte (화살표 참조 그림)
+
+b[0] : b의 첫번째 element를 접근
+b[0] = 2;
+b[9] = 11;
+
+index 0은 shift를 뜻함.
+최초 참조 주소에서 몇개만큼 움직여야 원하는 값을 얻을 수 있나?
+
+
+2. Structure: 구조체 (현재 JAVA에서는 deprecated)
+존재 목적: 
+
+ex. 학생에 대한 정보를 저장하는 구조체
+이름: String (Object)
+나이: integer
+키: float
+
+DT가 다름. 
+따라서 하나의 identifier로 3가지 정보에 모두 접근하고자 함.
+
+String myName; (대문자로 시작하는 keyword: Object)
+int myAge;
+float myHeight;
+
+struct Student { 
+    String myName;
+    int myAge;
+    float myHeight; // Attributes, 멤버변수, Object Variable
+};
+User-defined DT 
+
+Student park;
+park.myName = "Park";
+park.myAge = 20;
+park.myHeight = 180.0F;
+
+|4byte|   ...   |4byte|4byte|4byte|    ...    |2byte|2byte|2byte|2byte|
+ park -> null    myName myAge myHeight         char   char  char  char
+                -> ref   16    165              P      A     R     K <- 4byte myName이 참조 함.
+
+3. Class = structure + method
+Attributes (명사적인 특징)
++ methods (동사적인 특징)
+
+인터넷 연결 기반 프로그래밍
+상호 호환 필요 - JAVA 개발
+Platform Independant
+
+Java code -> compilie -> .class bytecode -> JVM -> runs anywhere
+
+class 파일만 인터넷으로 유통되면, 실행환경에 관계 없이 실행 가능
+
+단점) 속도가 느림
+하드웨어 속도가 빨라짐 -> 일부 상쇄
+
+C언어: 컴파일러가 매우 hardware dependant
+C++: OOP 언어, C보다 속도가 느림 
+속도 vs 유지보수 -> 사이에서 타협 해야 함, 둘 다 잡을 수는 없음
+execution speed vs OOP
