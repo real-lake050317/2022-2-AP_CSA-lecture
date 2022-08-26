@@ -32,9 +32,9 @@ public class Student { // class identifier를 생략하면 자동으로 Public�
         this.myHeight = myHeight;
     }
 
-    public Student(String name, int age, float height) {
-        this.myName = name;
-        this.myAge = age;
-        this.myHeight = height;
+    public Student(String myName, int myAge, float myHeight) {
+        this.myName = myName;
+        this.myAge = myAge;
+        this.myHeight = myHeight;
     }
 }

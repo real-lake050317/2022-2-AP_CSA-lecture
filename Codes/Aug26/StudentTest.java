@@ -18,7 +18,7 @@ public class StudentTest {
         sc.close();
 
         Student s = new Student(name, age, height);
-        
+
         System.out.println("내 이름은: " + s.getMyName() + "입니다.");
         System.out.println("내 나이는: " + s.getMyAge() + "세 입니다.");
         System.out.println("내 키는: " + s.getMyHeight() + "cm 입니다.");
