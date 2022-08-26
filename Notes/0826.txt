@@ -1,0 +1,29 @@
+4바이트로 메모리 주소를 저장하는 것은 2^32 byte 만큼 핸들링 가능
+-> 4GB
+
+클래스: Structure의 명사적 특징(Attributes) + 동사적 특징 (methods)
+Class: User Defined Data type
+
+OOP의 첫번째 특징: Encapsulation
+Access identifier: public, private, protected
+
+Private으로 속성들을 숨기는 이유: 외부에서 함부로 접근하지 못하도록
+ex: myAge 변수에 - 값을 넣었을때도 문제가 없다면, 프로그래머가 설계한 대로 소프트웨어가 작동하지 않음
+반드시 Authorized 된 method를 통해서 접근하도록 제작함
+
+Protected: 상속의 관계에 있는 하위 클래스에서도 동일하게 적용됨
+
+메소드는 크게 3가지 형태로 정의될 수 있다
+Constructor - 생성자
+생성자의 3가지 특징: 이름이 클래스 이름과 동일하며, 리턴 타입 자체가 없으며, 명시적으로 선언해주지 않아도 생성됨
+
+Object: Class에서 선언된 User defined DT가 적합한 identifier와 함께 생성된 것, Access 할 수 있게 된다면
+
+메소드 3가지: Constructor, Accessor, Modifie
+
+Default constructor: 값의 modification없이 쓰이는 생성자
+
+Static: StudentTest 클래스에 오브젝트를 만들지 않고도 실행이 되는 메소드나 Attributes 가 static
+
+main 메소드가 static인 이유는 이 메소드를 호출하는 시점에서 인스턴스를 생성하지 않고 실행하는 것이기 때문에
+
