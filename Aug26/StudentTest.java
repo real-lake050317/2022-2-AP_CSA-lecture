@@ -1,4 +1,3 @@
-package Codes.Aug26;
 import java.util.Scanner;
 
 public class StudentTest {
