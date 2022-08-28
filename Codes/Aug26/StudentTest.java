@@ -1,5 +1,4 @@
 package Codes.Aug26;
-//import scanner
 import java.util.Scanner;
 
 public class StudentTest {
