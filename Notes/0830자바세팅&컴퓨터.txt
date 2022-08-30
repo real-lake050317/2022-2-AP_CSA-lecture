@@ -1,0 +1,26 @@
+java lang package: 
+시스템, io, Math 클래스 등
+java util package:
+스캐너 클래스 등
+
+컴퓨터를 사용할 때 오류: 대부분 OS, AS가 고장
+
+jdk\bin\
+binary executable file
+.exe 파일들 존재
+java.exe & javac.exe
+
+jdk\lib\src.zip -> JAVA API들의 소스코드가 모두 존재
+
+javadoc.zip: Documentation -> jdk\docs directory에 받기
+jdk\docs\api\~html
+
+configuration:
+zsh >_ set
+PATH
+CLASSPATH
+
+환경변수란?
+컴퓨터를 사용하는 환경에 대해서 
+
+CLASSPATH: 실행시 필요한 bytecode, .class 파일에 대해 PATH 과 동일
