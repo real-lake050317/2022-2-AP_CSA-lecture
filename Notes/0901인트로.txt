@@ -1,0 +1,76 @@
+JAVA API 클래스를 잘 알아둬야 함.
+length, toString 등등
+
+코드 짜라고 한거 다 모아놓고 추후에 제출
+
+클래스 vs 객체(인스턴스)
+클래스: User-Defined Data Type
+객체: 클래스를 실제로 메모리 공간에 생성시킨 것
+
+Encapsulation: 
+
+Polymorphism (다형성):
+
+Inheritance (상속) : OOP의 기본적인 존재 이유
+개발된 코드를 유지/관리/보수하기 쉽게 해줌
+코드의 재사용이 필요함
+OOP 이전의 프로그래밍 언어들은 절차적 프로그래밍, Procedural Programming이었음
+절차적 프로그래밍에서 코드를 재사용 하려면 이전까지 개발된 코드 전체를 수정해야함
+따라서 코드를 재사용하기 위해 Inheritance가 사용됨 -> Encapsulation과 Polymorphism이 있기 때문에 사용할 수 있는것.
+Polymorphism + Overloading, Overriding
+
+콜렉션 프레임워크: 다양한 DT들을 정의해줌 ex.) ArrayList
+
+2차원 배열: Matrix 연산
+
+Recursion 상당히 중요
+
+Chap 9. Sorting & Searching
+
+Sorting, Searching, Array-related Mathmatical Algorithm
+
+Practice Questions
+
+Packages and Classes
+패키지: 비슷한 기능을 하는 클래스들끼리 묶어서 하나의 집합으로 만든 것
+같은 패키지에 소속된 클래스들은 같은 디렉토리로 관리 됨
+패키지들은 동일한
+
+Bitwise Operator: 하드웨어 레벨 프로그래밍
+
+Input/Output:
+JVM에서 클래스 실행시 커맨드라인 뒤에 붙여서 입력 (main method의 input parameter)
+
+ex.) java MainClass <input>
+<input> -> main (String[] args)
+p s v main(String[] args)
+Formal Input Parameter (F.I.P)
+기본적으로 문자열로 입력을 받음
+
+args 레퍼런스 타입으로 1차원 문자열 배열에서 문자열 상수를 넣음
+
+Buffered Reader
+Scanner 등등을 사용하면 프로그램 실행 도중에도 입력 가능
+
+소스코드에서 . 의 용도
+1. Directory
+2. Member Access Operator
+
+System.out.println
+System 클래스 밑의 static한 out, out 역시 object
+println() 은 메소드임, argument를 받아서 출력하는 것
+toString 메소드를 자동적으로 사용함
+
+String.toString 으로 접근 가능
+Object.toString 은 className@hashcode 를 반환함
+hashcode란? 주소값을 반환하는것이 아닌 메모리 상에서 어디에 저장되어있는지 대략적으로 이야기 해주는 역할
+
+제어문
+크게 나눠서 selection statement, iteration statement, jump statement
+selection statement: if 와 그 친구들 (if, else, else if, switch)
+iteration statement: for, while, do while, foreach
+Exception 클래스
+
+사용되는 모든 클래스에 대해서 Documentation을 찾아 봐야함
+
+.;.\chnutil.jar
