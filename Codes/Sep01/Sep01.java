@@ -55,15 +55,15 @@ public class Sep01 {
                         break;
                     case(3):
                         sTemp.setMidScore(f.readDouble());
-                        // Sets quiz score when fourth token is read
+                        // Sets midterm score when fourth token is read
                         break;
                     case(4):
                         sTemp.setFinalScore(f.readDouble());
-                        // Sets midterm score when fifth token is read
+                        // Sets final exam score when fifth token is read
                         break;
                     case(5):
                         sTemp.setQuizScore(f.readDouble());
-                        // Sets final score when sixth token is read
+                        // Sets quiz score when sixth token is read
                         break;
                 }  
             }
@@ -88,31 +88,33 @@ public class Sep01 {
             total += s[i].getScore();
             o.println(i+1 + "등 " + s[i].getName() + " 최종 점수 " + s[i].getScore() + "점");
         } // Print the result
-        // calculate 
+
         o.println();
 
-        o.println("평균 중간고사 점수: " + midExam/totalNum);
-        o.println("평균 기말고사 점수: " + finalExam/totalNum);
-        o.println("평균 퀴즈 점수: " + quiz/totalNum);
-        o.println("평균 최종 점수: " + total/totalNum);
+        o.println("평균 중간고사 점수: " + String.format("%.3f", midExam/totalNum));
+        o.println("평균 기말고사 점수: " + String.format("%.3f", finalExam/totalNum));
+        o.println("평균 퀴즈 점수: " + String.format("%.3f", quiz/totalNum));
+        o.println("평균 최종 점수: " + String.format("%.4f", total/totalNum));
 
         // compute the standard deviation
         double midStd = 0, finalStd = 0, quizStd = 0, totalStd = 0;
+
         for (int i = 0; i < totalNum; i++) {
             midStd += Math.pow(s[i].getMidScore() - midExam/totalNum, 2);
             finalStd += Math.pow(s[i].getFinalScore() - finalExam/totalNum, 2);
             quizStd += Math.pow(s[i].getQuizScore() - quiz/totalNum, 2);
             totalStd += Math.pow(s[i].getScore() - total/totalNum, 2);
         }
+
         midStd = Math.sqrt(midStd/totalNum);
         finalStd = Math.sqrt(finalStd/totalNum);
         quizStd = Math.sqrt(quizStd/totalNum);
         totalStd = Math.sqrt(totalStd/totalNum);
         o.println();
-        o.println("중간고사 표준편차: " + midStd);
-        o.println("기말고사 표준편차: " + finalStd);
-        o.println("퀴즈 표준편차: " + quizStd);
-        o.println("최종 점수 표준편차: " + totalStd);
+        o.println("중간고사 표준편차: " + String.format("%.3f", midStd));
+        o.println("기말고사 표준편차: " + String.format("%.3f", finalStd));
+        o.println("퀴즈 표준편차: " + String.format("%.3f", quizStd));
+        o.println("최종 점수 표준편차: " + String.format("%.3f", totalStd));
 
         o.close(); // Close the output file
     }
