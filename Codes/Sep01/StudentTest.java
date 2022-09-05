@@ -1,7 +1,6 @@
 import chn.util.*;
 import java.lang.Math;
 
-
 public class StudentTest {
     public static void main(String[] args) {
         FileInput f = new FileInput("input.txt"); // Reads data from input.txt
