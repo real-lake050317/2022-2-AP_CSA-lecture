@@ -56,9 +56,4 @@ public class Student {
     public void setFinalScore(double finalScore) {
         this.finalScore = finalScore;
     }
-
-    public String toString() {
-        return " 이름: " + name + " 나이: " + age + "세 키: " + height + "cm 퀴즈 점수는: " + quizScore + "점 중간고사 점수는: " + midScore + "점 기말고사 점수는: " + finalScore + "점 학기말 총 점수는: " + getScore() + "점";
-    }
-
 }

@@ -9,36 +9,6 @@ public class StudentTest {
         Student[] s = new Student[22]; // Array that can contain 22 students
         int totalNum = f.readInt(); // Variable to count index of the array
         double midExam = 0, finalExam = 0, total = 0, quiz = 0;
-        // int num = f.readInt(); // Skips the first line
-        /*
-        while (f.hasMoreTokens()) {
-            Student sTemp = new Student(); // Temporary student object
-            for (int i = 0; i<6; i++) { // Read 6 tokens per line
-                switch(i) {
-                    case(0):
-                        sTemp.setName(f.readToken()); // Sets name when first token is read
-                        break;
-                    case(1):
-                        sTemp.setHeight(f.readDouble()); // Sets height when second token is read
-                        break;
-                    case(2):
-                        sTemp.setAge(f.readInt()); // Sets age when third token is read
-                        break;
-                    case(3):
-                        sTemp.setQuizScore(f.readDouble()); // Sets quiz score when fourth token is read
-                        break;
-                    case(4):
-                        sTemp.setMidScore(f.readDouble()); // Sets midterm score when fifth token is read
-                        break;
-                    case(5):
-                        sTemp.setFinalScore(f.readDouble()); // Sets final score when sixth token is read
-                        break;
-                }  
-            }
-            s[idx] = sTemp; // add the temporary student object to the array
-            idx++; // increase the index by 1
-        }
-        */
 
         for (int i = 0; i<totalNum; i++) {
             Student sTemp = new Student(); // Temporary student object
@@ -89,8 +59,6 @@ public class StudentTest {
             o.println(i+1 + "등 " + s[i].getName() + " 최종 점수 " + s[i].getScore() + "점");
         } // Print the result
 
-        o.println();
-
         o.println("평균 중간고사 점수: " + String.format("%.3f", midExam/totalNum));
         o.println("평균 기말고사 점수: " + String.format("%.3f", finalExam/totalNum));
         o.println("평균 퀴즈 점수: " + String.format("%.3f", quiz/totalNum));
@@ -110,7 +78,7 @@ public class StudentTest {
         finalStd = Math.sqrt(finalStd/totalNum);
         quizStd = Math.sqrt(quizStd/totalNum);
         totalStd = Math.sqrt(totalStd/totalNum);
-        o.println();
+        
         o.println("중간고사 표준편차: " + String.format("%.3f", midStd));
         o.println("기말고사 표준편차: " + String.format("%.3f", finalStd));
         o.println("퀴즈 표준편차: " + String.format("%.3f", quizStd));
