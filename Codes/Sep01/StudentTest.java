@@ -2,7 +2,7 @@ import chn.util.*;
 import java.lang.Math;
 
 
-public class Sep01 {
+public class StudentTest {
     public static void main(String[] args) {
         FileInput f = new FileInput("input.txt"); // Reads data from input.txt
         FileOutput o = new FileOutput("result.txt", "write"); // Writes data to result.txt
