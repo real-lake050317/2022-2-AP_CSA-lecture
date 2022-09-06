@@ -1,0 +1,66 @@
+import 문장 -> 필요한 package의 클래스나, API 클래스를 가져옴
+
+JAVA에서 . 의 의미:
+import에서의 . 은 디렉토리를 의미함
+
+Wildcard import: *나 ?
+*는 모두를 뜻하고, ?는 하나의 글자를 비움
+ex) ?a -> 첫글자는 상관 없고 두번째 글자는 a
+*을 사용하면 현재 코드에서 사용되는 클래스들을 임포트 함
+
+public static void 
+access modifier,
+method identifier,
+return type
+
+static이면 main이 포함되어 있는 클래스의 객체를 만들지 않고도 호출 가능
+
+main 이외의 클래스에 static이 붙어있으면 main 이외의 메소드도 객체 생성 없이 호출 가능
+ex.) Math 클래스
+Math.abs() 처럼 -> Math 라는 객체 없이 abs라는 메소드를 사용 가능
+
+(double)total/a.length -> total을 double로 먼저 캐스팅하고,
+double/int 의 경우에서는 높은걸 따라감
+따라서 평균의 값이 double로 계산되는 것
+
+float 1/8/23
+23bit: 유효자리 숫자를 계산함.
+2^23 = 10^7.x -> 7~8자리 정도
+double 1/11/52
+
+16진수를 사용하면 -> 숫자를 덜 사용해도 됨
+
+final variable: 변수를 상수화 함.
+
+클래스 앞에서도 final을 사용할 수 있음 -> 더이상 하위 클래스를 만들지 않겠다는 뜻
+
+하드웨어적 프로그래밍에서는 bit 단위의 operation이 필요함
+
+arithmetic operation: +, -, *, /, %
+bit operation: &, |, ^, ~, <<, >>, >>>
+relational operation: >, <, >=, <=, ==, !=
+-> output: boolean
+
+floating point number: 유효자리 숫자가 정해져 있음.
+정확한 실수를 표현할 수 없음.
+연산을 할 수록 오차가 추가됨
+
+floating point number 연산의 오차가 10^-5 정도 안에 있냐에 따라 참, 거짓을 판단함
+
+object a == object b -> 객체의 메모리 주소를 비교함
+isEquals() -> 객체의 값들을 비교함
+
+logical operation: &&, ||, !
+-> output: boolean
+
+assignment operator: =, +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=, >>>=
+-> 우선순위가 가장 낮음
+x += 4 -> x = x + 4
+
+
+++a, a++ -> 후위, 전위. ++ 연산의 순서를 결정함
+operator priority:
+단항연산자 !, ++, -- -> 우선순위 1순위
+산술연산자 *, /, % -> 우선순위 2순위
+산술연산자 (arithmetic operator) +, - -> 우선순위 3순위
+관계연산자 (relational operator) >, <, >=, <=, ==, != -> 우선순위 4순위
