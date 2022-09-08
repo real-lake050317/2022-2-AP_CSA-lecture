@@ -1,0 +1,84 @@
+and, or, not -> 단항연산자가 우선순위가 가장 높음, 그다음 and, or
+
+operator precedence
+
+__ && __
+앞이 false가 나오면 뒤 항은 연산하지 않음
+short-circuit property
+
+__ || __
+앞이 true가 나오면 true로 리턴하고 뒤 항은 연산하지 않음
+
+input 종류
+main method formal input parameter -> 프로그램 실행 시 한번만 사용 가능, 입력 타입이 string이기 때문에 Wrapper class나 잘 조작을 해야함
+실행 도중에 받는 방법: chn 등의 패키지를 사용해도 됨
+GUI를 사용해도 됨
+
+printf를 사용하면 소수점도 지정해줄 수 있음
+print와 println의 차이: 줄바꿈 여부
+
+println() 메소드 안에 객체가 들어가면, 자동적으로 객체 안의 toString 메소드가 실행됨 -> (클래스 이름)@(해시코드) 가 리턴됨
+별 쓸데 없는 정보임 -> 실제로는 객체 안의 정보를 얻고 싶음
+-> toString을 overriding 해서 사용하는것이 좋음
+
+str1.concat(str2) : str1 + str2 의 효과 -> operator overloading
+
+": 문자열의 시작과 끝을 나타냄
+" 를 출력하기 위해서는? \" 로 출력
+Escape sequence를 사용하면 됨
+\n, \t 등
+\ 자체를 출력하고 싶으면? \\ 로 출력
+
+switch syntax:
+
+switch() {
+    case 1: __statement__
+        break;
+    case 2: __statement__
+        break;
+    default: __statement__
+        break;
+}
+
+iterative statement
+while, do-while, for, foreach
+while: 조건 판단이 먼저, 후 실행
+do-while: 실행이 먼저, 후 조건 판단
+
+for (1; 2; 3)
+1: starting condition
+2: ending condition
+3: increment/decrement condition
+
+while, do-while: iteration을 몇 번 할지 시작 시점에서 알 수 없을때
+ex) root에서 시작해서 모든 디렉토리를 모두 순회하고 싶은 경우
+
+foreach 구문
+for( 1 : 2 ) {
+
+}
+2: array, CFC object, 계속 iteration을 거치며 하나씩 1로 카피 함
+
+ex) for(int a : b) (int[] b = {1, 2, 3})
+1 과 2의 원소는 타입이 같아야 함
+c++ 의 auto 구문과 동일 (range-based for loop with auto keyword)
+
+nested loop
+2차원 배열과 큰 관련
+
+syntax error (compile time error)
+
+java debugger
+
+디버거란?
+로지컬 에러: 버그
+
+원치않는 에러가 발생하면 -> JAVA에서는 모두 exception으로 처리함
+exception을 처리하는 syntax
+throw, throws, try, catch, finally
+
+null point exception
+
+concurrent modification
+chn 등에서 close 등을 똑바로 해줘야 함
+
