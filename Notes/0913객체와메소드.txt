@@ -1,0 +1,45 @@
+Barrons Ch03
+
+Wrapper class: Primative Data Type 8개를 감싸는 Wrapper 클래스가 존재한다.
+Private, Public, Protected
+
+Method 헤더
+Constructor
+Modifier: Attribute들을 변경할 수 있음
+Scope: 범위 ex) for (int i = 0; ; ) 에서 i가 사용될 수 있는 범위
+
+Reference: 주소 저장에 4byte 사용
+
+Comment 따야함
+
+Constructor의 특징
+Object의 initial value를 설정하는 것에 대한 코드가 들어감
+Input parameter가 없는 경우에는 default constructor가 됨
+
+Accessor Method
+Getter, Setter
+
+driving class: main class, 실제로 실행되는 클래스 (박홍제만 쓰는 말)
+
+Mutator Method
+
+dot operator: 멤버라는 뜻
+
+String 클래스에서 isEquals 클래스를 찾으면, 문자열을 비교
+Object 클래스에서 isEquals 클래스를 찾으면, 메모리 주소를 비교
+
+메모리 상황에 익숙해질 것!
+
+ArrayList: 
+Array와 기본적으로 동일함
+Array는 크기가 고정되어 있음
+But, ArrayList는 크기가 동적으로 변함
+형태상으로는 클래스임
+Wrapper class로 선언
+Array도 클래스로 선언이 되어있음
+사이즈가 가변적이지만, 내부적으로는 Array를 사용함
+
+생성시점에 길이 20으로 생성
+추가되면, 즉 21개째가 추가되면, 이전의 것을 없애고, 새로운걸 만들어서 copy함
+그래서, 21개째가 추가되면, 20개가 사라짐
+
