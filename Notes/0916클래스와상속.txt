@@ -1,0 +1,82 @@
+call by value
+call by reference
+
+Chap 4: OOPs
+Object Oriented Programming
+
+왜 OOP를 할까?
+User-defined DT를 만들고,
+객체를 생성해서 객체 중심적인 코딩을 하는가?
+
+코드를 재사용 하기 위해서
+
+객체지향 전 -> 절차지향 (Procedural Programming)
+절차지향: 소스코드 전체를 다 이해 해야한다, 로직을 이해해서 전체를 수정해야한다. -> 비용, 시간, 노력이 많이 든다
+그래서 OOP라는 개념을 도입하기 시작함.
+
+기존의 있는 코드를 그대로 두고, 추가/확장을 통해 코드를 개선시키고자 함.
+Code Renewal
+
+클래스의 헤드
+public class A extends B implements C, D, E ...
+
+Superclass는 c++에 있음
+Java에서는 single inheritance를 채택함
+
+C, D, E... 는 interface를 나타냄
+
+byte, short, int, long, float, double
+<- 범위가 작음               범위가 큼 -->
+
+따라서 -> 방향 (ex. byte -> int) 은 자동 형변환 (implicit casting)
+반대로 <- 방향 (ex. int -> byte) 은 강제 형변환 (explicit casting)
+
+클래스 집합에서 상속을 받을 수록 specific 됨.
+따라서, 그림 자료에서 A가 B로 올라가는 경우에는 upcasting
+B가 A로 내려가는 경우에는 downcasting
+
+단, 헷갈리지 말것,
+Specific 해질수록 코드의 양은 많아짐
+
+디폴트 생성자도 만들어 놓는것이 좋음
+
+그림과같은 클래스 hierarchy에서
+B ob = new B();
+A oa = new A();
+
+ob.a() 실행 가능
+ob.b() 실행 가능
+oa.a() 실행 가능, but, 상속 받은 A에서 실행됨 (overwrite)
+oa.b() 실행 가능, but b에서 메소드 b가 public 일때만
+oa.c() 실행 가능
+
+클래스 캐스팅
+B oc = new A();
+하위 클래스로 만든 것을 상위 클래스로 만든다 (upcasting)
+상위 클래스로 만든 것을 하위 클래스로 만든다 (downcasting)
+
+실제로 allocation은 A 클래스의 형태로 했지만, 외부에서는 B의 형태로 저장된것으로 보일 것.
+
+oc.a() 실행 가능
+oc.b() 실행 가능
+oc.c() 실행 불가능
+(A)oc.c() 실행 가능 (괄호의 연산 우선순위가 .(dot operator) 보다 높음)
+
+왜 이런 짓을 할까?
+B[] arr = new B[70];
+A, A2, A3도 다 배열 안에 할당 가능하게 됨.
+
+arr 배열의 n 번쨰 원소를 뽑아 a()를 실행시키면, 자신 클래스와 가장 가까운 a()가 실행됨.
+
+interface에는 메소드의 헤드만 존재함
+interface를 이용해 오브젝트를 다이렉트하게는 만들 수 없음
+
+interface를 implement하면 interface에 있는 모든 메소드를 구현해야 함
+안그러면 abstract class로 만들어야 함
+이 사이에서도 casting이 가능함
+
+Collection Framework 클래스들은 모두 똑같은 이름의 메소드를 가지고 있음
+왜냐, collection interface를 implements 했기 때문에
+
+출력을 할 때는 linked list, array list, hash set, tree set, hash map, tree map 등등은 모두 다른 메소드를 사용해야 함.
+but, interface를 선언하고 이를 implements 했기 떄문에 그냥 같은 이름의 메소드를 사용할 수 있음
