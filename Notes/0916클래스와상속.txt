@@ -80,3 +80,13 @@ Collection Framework 클래스들은 모두 똑같은 이름의 메소드를 가
 
 출력을 할 때는 linked list, array list, hash set, tree set, hash map, tree map 등등은 모두 다른 메소드를 사용해야 함.
 but, interface를 선언하고 이를 implements 했기 떄문에 그냥 같은 이름의 메소드를 사용할 수 있음
+
+Multiple inheritance를 지원하지 않는 이유: 어떤 함수가 있는지 뿐 아니라, 각 함수가 무엇을 하는지 까지 이미 정의 했기 때문에 코드가 복잡해짐
+
+interface도 implement 지원 가능
+
+comparable interface: Java에서 가장 많이 Implement 되는 interface
+
+Don’t get confused by the names: a subclass is bigger than a superclass —it contains more data and more methods
+- From Barron's APCSA 22-23
+
