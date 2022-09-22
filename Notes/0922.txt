@@ -1,0 +1,49 @@
+명시적 캐스팅으로 해결할 수 있다
+
+Collection Interface
+
+Collection 프레임워크 클래스들의 API 도큐멘테이션을 살펴보면
+중간중간 Abstract들이 껴있음
+
+인터페이스 안의 모든걸 
+
+abstractList abstract 클래스가 CFC에 있는데, 이를 상속 받아서 ArrayList, LinkedList 등을 구현하는 것
+
+No-argument Constructor, Default Constructor
+
+Object 는 Super 클래스
+
+Math 클래스 안의 attribute는 두개 가 있음
+그리고 그 두개는 static 이다 -> 객체 생성 없이도 사용 가능
+
+isEquals method
+operator 만큼 strickt함
+그 안에 들어가는 값 자체는 
+메모리에 들어있는 값 자체를 비교 해버림
+어디에 들어있는지는 고려하지 않음
+
+HashCode 는 Hashing Scheme과 관련이 있음
+디버깅 용도로 주로 사용
+
+compareTo Method: 크기 비교
+return type은 int
+return 값이 0이면 같다
+return 값이 양수면 크다
+return 값이 음수면 작다
+
+문자열의 크기 비교는 사전순으로 비교
+
+뒤쪽에 나오는게 더 크다
+대문자 vs 소문자: 소문자가 더 크다 (ASCII 코드 기준)
+
+compareToIgnoreCase Method: 대소문자 구분 없이 비교
+
+substring
+indexOf 메소드 등
+
+Wrapper class -> primitive type 8개 다 있음, AP 에서는 Integer, Double 만, 수업에서는 모두
+
+AutoBoxing, UnBoxing
+
+필요에 따라서 primitive type을 Wrapper class로 바꿔주거나, Wrapper class를 primitive type으로 자동적으로 변환함
+

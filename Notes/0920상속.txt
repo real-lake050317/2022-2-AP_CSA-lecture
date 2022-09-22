@@ -1,0 +1,14 @@
+superclass subclass
+
+Partial Overwriting
+Overriding
+
+overriding overloading
+
+Static Binding: 컴파일타임 결정
+Dynamic Binding: 실행시점 결정
+인스턴스 메소드 호출 결정 -> 시간에 따라 분류
+
+overriding
+
+조건들에 따라서 클래스 오브젝트의 allocation 유무가 달라질 경우 late Binding
