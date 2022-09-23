@@ -1,0 +1,43 @@
+난수 생성 방법
+Math 클래스 사용시: 0~1 사이의 double 값이 리턴 됨
+random 클래스 사용시: 
+
+난수란?
+
+Pure Random Number
+Pseudo Random Number
+
+랜덤 테이블이 있음
+seed에 현재의 시간을 집어 넣음
+UNIX 시간 기반
+난수 테이블을 만들어 놓고, seed를 이용해서 난수를 만듬
+적당한 수학적 Manipulation을 통해 랜덤 테이블 내의 랜덤 숫자를 불러옴
+
+Math 클래스 내의 random: 
+
+자바에서 4gb 이상의 프로그램은 만들 수 없음
+
+Big-O analysis 를 이용해서 컴퓨터 프로그램의 효율성을 분석 함
+
+O(1): 데이터의 개수와 상관 없이 constant한 time complexity
+O(n): 데이터의 개수에 비례해서 time complexity가 증가
+O(nlog n): 데이터의 개수에 비례해서 time complexity가 증가하지만, log n 만큼 더 빠름
+O(n^2): 데이터의 개수에 제곱해서 time complexity가 증가
+O(n^3): 데이터의 개수에 세제곱해서 time complexity가 증가
+--- 알고리즘의 범위 ---
+
+O(2^n): 데이터의 개수에 2의 n제곱해서 time complexity가 증가 (ex. 하노이탑 문제 등)
+O(n!): 데이터의 개수에 팩토리얼해서 time complexity가 증가 (ex. 순열 등)
+
+배열: 하나의 데이터 타입을 하나의 identifier로 관리하기 위해 만들어진 DT
+
+사이즈가 커져도 배열을 사용하는게 나을 수 있음
+But, 너무 커지거나 필요 사이즈가 왔다 갔다 하면 ArrayList를 사용하는게 나을 수 있음
+
+(array 이름).length: 배열의 사이즈를 리턴
+String 에서는 length()를 사용함, 배열에서는 그냥 attribute로 존재하는 것
+
+One Dimensional Array 순회 하는 방법
+
+배열의 이름을 argument로 받으면, 메모리 주소를 넘겨 받게 되는 것
+-> element 수정 가능
