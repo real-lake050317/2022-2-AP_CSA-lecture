@@ -1,0 +1,6 @@
+MyMatrix
+MyMatrixTest: Driving class
+
+여러가지 initialize 가능한 메소드들이 필요
+
+constructor, initializer, toString

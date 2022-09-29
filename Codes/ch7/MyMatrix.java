@@ -17,6 +17,7 @@ public class MyMatrix {
         this.name = name;
         this.numRows = numRows;
         this.numCols = numCols;
+        this.matrix = new double[numRows][numCols];
     }
 
     public MyMatrix(String name, int numRows, int numCols, double[][] matrix) {
@@ -31,7 +32,7 @@ public class MyMatrix {
         String str = this.name + "\n" + this.numRows + "x" + this.numCols + "\n";
         for (int i = 0; i < this.numRows; i++) {
             for (int j = 0; j < this.numCols; j++) {
-                str += this.matrix[i][j] + " ";
+                str += String.format("%.3f", this.matrix[i][j]) + " ";
             }
             str += "\n";
         }
@@ -57,6 +58,129 @@ public class MyMatrix {
             for (int j = 0; j < this.numCols; j++) {
                 this.matrix[i][j] = Math.random() * (max - min) + min;
             }
+        }
+    }
+
+    public int getNumRows() {
+        return numRows;
+    }
+
+    public int getNumCols() {
+        return numCols;
+    }
+
+    public void setMatrixEntry(int row, int col, double value) {
+        this.matrix[row - 1][col - 1] = value;
+    }
+
+    public double getMatrixEntry(int row, int col) {
+        return this.matrix[row - 1][col - 1];
+    }
+
+    public MyMatrix add(MyMatrix mat) {
+        if (this.numRows != mat.getNumRows() || this.numCols != mat.getNumCols()) {
+            throw new IllegalArgumentException("The two matrices are not the same size.");
+        }
+        MyMatrix matC = new MyMatrix("Added Matrix", this.numRows, this.numCols);
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                matC.setMatrixEntry(i, j, this.matrix[i - 1][j - 1] + mat.getMatrixEntry(i, j));
+            }
+        }
+        return matC;
+    }
+
+    public MyMatrix subtract(MyMatrix mat) {
+        if (this.numRows != mat.getNumRows() || this.numCols != mat.getNumCols()) {
+            throw new IllegalArgumentException("The two matrices are not of the same size.");
+        }
+        MyMatrix matC = new MyMatrix("Subtracted Matrix", this.numRows, this.numCols);
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                matC.setMatrixEntry(i, j, this.matrix[i - 1][j - 1] - mat.getMatrixEntry(i, j));
+            }
+        }
+        return matC;
+    }
+
+    // Overloading for the matrix multiplication
+    public MyMatrix multiply(MyMatrix mat) {
+        if (this.numCols != mat.getNumRows()) {
+            throw new IllegalArgumentException("The two matrices are not of the correct size.");
+        }
+        MyMatrix matC = new MyMatrix("Multiplied Matrix", this.numRows, mat.getNumCols());
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= mat.getNumCols(); j++) {
+                double sum = 0;
+                for (int k = 1; k <= this.numCols; k++) {
+                    sum += this.matrix[i - 1][k - 1] * mat.getMatrixEntry(k, j);
+                }
+                matC.setMatrixEntry(i, j, sum);
+            }
+        }
+        return matC;
+    }
+
+    // Overloading for scalar multiplication
+    public MyMatrix multiply(double scalar) {
+        MyMatrix matC = new MyMatrix("Scalar Multiplied Matrix", this.numRows, this.numCols);
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                matC.setMatrixEntry(i, j, this.matrix[i - 1][j - 1] * scalar);
+            }
+        }
+        return matC;
+    }
+
+    public MyMatrix transpose() {
+        MyMatrix matC = new MyMatrix("Transposed Matrix", this.numCols, this.numRows);
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                matC.setMatrixEntry(j, i, this.matrix[i - 1][j - 1]);
+            }
+        }
+        return matC;
+    }
+
+    public boolean evaluateEquality(MyMatrix mat) {
+        if (this.numRows != mat.getNumRows() || this.numCols != mat.getNumCols()) {
+            return false;
+        }
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                if (Math.abs(this.matrix[i - 1][j - 1] - mat.getMatrixEntry(i, j)) > 0.0001) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean evaluateSize(MyMatrix mat) {
+        return this.numRows == mat.getNumRows() && this.numCols == mat.getNumCols();
+    }
+
+    public void evaluateInfo(MyMatrix mat) {
+        if (!evaluateSize(mat)) {
+            System.out.println("The two matrices are not of the same size.");
+        } else {
+            System.out.println("The two matrices are of the same size.");
+        }
+        if (evaluateSize(mat)) {
+            if (this.evaluateEquality(mat)) {
+                System.out.println("The two matrices are equal.");
+            } else {
+                System.out.println("The two matrices are not equal.");
+            }
+        }
+        if (evaluateSize(mat) && !evaluateEquality(mat)) {
+            double sum = 0;
+            for (int i = 1; i <= this.numRows; i++) {
+                for (int j = 1; j <= this.numCols; j++) {
+                    sum += (this.matrix[i - 1][j - 1] - mat.getMatrixEntry(i, j));
+                }
+            }
+            System.out.println(sum / (this.numRows * this.numCols));
         }
     }
 }
