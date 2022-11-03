@@ -1,5 +1,3 @@
-package Codes.ch7;
-
 public class MyMatrix {
     private String name;
     private int numRows;
@@ -106,7 +104,7 @@ public class MyMatrix {
     // Overloading for the matrix multiplication
     public MyMatrix multiply(MyMatrix mat) {
         if (this.numCols != mat.getNumRows()) {
-            throw new IllegalArgumentException("The two matrices are not of the correct size.");
+            throw new IllegalArgumentException("The two matrices are not compatible in multiplication.");
         }
         MyMatrix matC = new MyMatrix("Multiplied Matrix", this.numRows, mat.getNumCols());
         for (int i = 1; i <= this.numRows; i++) {
