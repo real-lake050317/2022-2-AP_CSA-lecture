@@ -161,7 +161,7 @@ public class MyMatrix {
         }
         for (int i = 1; i <= this.numRows; i++) {
             for (int j = 1; j <= this.numCols; j++) {
-                if (Math.abs(this.matrix[i - 1][j - 1] - mat.getMatrixEntry(i, j)) > 0.0001) {
+                if (Math.abs(this.matrix[i - 1][j - 1] - mat.getMatrixEntry(i, j)) > 1e-10) {
                     return false;
                 }
             }
@@ -242,19 +242,15 @@ public class MyMatrix {
             }
             lead++;
         }
-
         return matC;
     }
 
-    public MyMatrix gebs(MyMatrix x) { // Code for Gaussian Elimination Backward Substitution
-        MyMatrix matC = new MyMatrix("Gaussian Elimination Backward Substitution", this.numRows, 1);
-        for (int i = this.numRows; i >= 1; i--) {
-            double sum = 0;
-            for (int j = this.numCols; j >= i + 1; j--) {
-                sum += matC.getMatrixEntry(j, 1) * this.matrix[i - 1][j - 1];
-            }
-            matC.setMatrixEntry(i, 1, (x.getMatrixEntry(i, 1) - sum) / this.matrix[i - 1][i - 1]);
-        }
-        return matC;
+    
+
+    public boolean check(MyMatrix x, MyMatrix b) {
+        // if this.matrix * x = b, return true
+        MyMatrix matC = new MyMatrix("Check", this.numRows, x.getNumCols());
+        matC = this.multiply(x);
+        return matC.evaluateEquality(b);
     }
 }
