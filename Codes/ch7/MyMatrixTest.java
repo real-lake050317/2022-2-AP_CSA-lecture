@@ -8,6 +8,7 @@ public class MyMatrixTest {
         // matB.initializeIdentityMatrix();
         // System.out.println(matB);
         // matB.initializeRandomly(-10, 10);
+        /* 
         System.out.println(matB);
         System.out.println(matB.transpose());
         matB.setMatrixEntry(1, 1, 10);
@@ -16,5 +17,12 @@ public class MyMatrixTest {
         System.out.println(matB.multiply(matA));
         System.out.println(matB.multiply(3));
         matB.evaluateInfo(matB);
+        */
+        matA.initializeRandomlyInt(-10, 10);
+        System.out.println(matA);
+        // MyMatrix matC = new MyMatrix("Test", 3, 3, new double[][] { {1, 0, 0}, {0, 0, 0}, {0, 0, 3} });
+        System.out.println(matA);
+        System.out.println(matA.reducedRowEchelonForm(new MyMatrix("b", 3, 1, new double[][] { { 1 }, { 2 }, { 3 } })));
+        System.out.println(matA.gebs(new MyMatrix("b", 3, 1, new double[][] { { 1 }, { 2 }, { 3 } })));
     }
 }

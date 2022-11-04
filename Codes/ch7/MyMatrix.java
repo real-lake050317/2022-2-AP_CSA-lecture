@@ -50,11 +50,20 @@ public class MyMatrix {
         }
     }
 
-    public void initializeRandomly(double min, double max) {
+    public void initializeRandomlyDouble(double min, double max) {
         this.matrix = new double[this.numRows][this.numCols];
         for (int i = 0; i < this.numRows; i++) {
             for (int j = 0; j < this.numCols; j++) {
                 this.matrix[i][j] = Math.random() * (max - min) + min;
+            }
+        }
+    }
+
+    public void initializeRandomlyInt(int min, int max) {
+        this.matrix = new double[this.numRows][this.numCols];
+        for (int i = 0; i < this.numRows; i++) {
+            for (int j = 0; j < this.numCols; j++) {
+                this.matrix[i][j] = (int) (Math.random() * (max - min) + min);
             }
         }
     }
@@ -73,6 +82,12 @@ public class MyMatrix {
 
     public double getMatrixEntry(int row, int col) {
         return this.matrix[row - 1][col - 1];
+    }
+
+    public void swapRows(int row1, int row2) {
+        double[] temp = this.matrix[row1 - 1];
+        this.matrix[row1 - 1] = this.matrix[row2 - 1];
+        this.matrix[row2 - 1] = temp;
     }
 
     public MyMatrix add(MyMatrix mat) {
@@ -180,5 +195,66 @@ public class MyMatrix {
             }
             System.out.println(sum / (this.numRows * this.numCols));
         }
+    }
+    
+    public MyMatrix reducedRowEchelonForm(MyMatrix x) {
+        MyMatrix matC = new MyMatrix("Reduced Row Echelon Form", this.numRows, this.numCols + 1);
+
+        for (int i = 1; i <= this.numRows; i++) {
+            for (int j = 1; j <= this.numCols; j++) {
+                matC.setMatrixEntry(i, j, this.matrix[i - 1][j - 1]);
+            }   
+        }
+
+        for (int i = 1; i <= this.numRows; i++) {
+            matC.setMatrixEntry(i, this.numCols + 1, x.getMatrixEntry(i, 1));
+        } // Augmented matrix [A|b]
+
+        int lead = 0;
+        for (int r = 0; r < this.numRows; r++) {
+            if (this.numCols <= lead) {
+                break;
+            }
+            int i = r;
+            while (matC.getMatrixEntry(i + 1, lead + 1) == 0) {
+                i++;
+                if (this.numRows == i) {
+                    i = r;
+                    lead++;
+                    if (this.numCols == lead) {
+                        lead--;
+                        break;
+                    }
+                }
+            }
+            matC.swapRows(i + 1, r + 1);
+            double div = matC.getMatrixEntry(r + 1, lead + 1);
+            for (int j = 1; j <= this.numCols + 1; j++) {
+                matC.setMatrixEntry(r + 1, j, matC.getMatrixEntry(r + 1, j) / div);
+            }
+            for (int j = 1; j <= this.numRows; j++) {
+                if (j != r + 1) {
+                    double sub = matC.getMatrixEntry(j, lead + 1);
+                    for (int k = 1; k <= this.numCols + 1; k++) {
+                        matC.setMatrixEntry(j, k, matC.getMatrixEntry(j, k) - (sub * matC.getMatrixEntry(r + 1, k)));
+                    }
+                }
+            }
+            lead++;
+        }
+
+        return matC;
+    }
+
+    public MyMatrix gebs(MyMatrix x) { // Code for Gaussian Elimination Backward Substitution
+        MyMatrix matC = new MyMatrix("Gaussian Elimination Backward Substitution", this.numRows, 1);
+        for (int i = this.numRows; i >= 1; i--) {
+            double sum = 0;
+            for (int j = this.numCols; j >= i + 1; j--) {
+                sum += matC.getMatrixEntry(j, 1) * this.matrix[i - 1][j - 1];
+            }
+            matC.setMatrixEntry(i, 1, (x.getMatrixEntry(i, 1) - sum) / this.matrix[i - 1][i - 1]);
+        }
+        return matC;
     }
 }
