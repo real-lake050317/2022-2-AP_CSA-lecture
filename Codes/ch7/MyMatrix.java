@@ -245,12 +245,14 @@ public class MyMatrix {
         return matC;
     }
 
-    
-
     public boolean check(MyMatrix x, MyMatrix b) {
         // if this.matrix * x = b, return true
         MyMatrix matC = new MyMatrix("Check", this.numRows, x.getNumCols());
         matC = this.multiply(x);
         return matC.evaluateEquality(b);
+    }
+
+    public MyMatrix rowEchelon(MyMatrix x) {
+        return x;
     }
 }
