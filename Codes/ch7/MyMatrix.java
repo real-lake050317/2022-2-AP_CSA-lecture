@@ -251,8 +251,4 @@ public class MyMatrix {
         matC = this.multiply(x);
         return matC.evaluateEquality(b);
     }
-
-    public MyMatrix rowEchelon(MyMatrix x) {
-        return x;
-    }
 }
