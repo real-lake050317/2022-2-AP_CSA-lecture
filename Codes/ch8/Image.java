@@ -47,14 +47,14 @@ public class Image {
     }
 
     public void displayInfo() {
-        System.out.println("Visit Sequence");
+        System.out.println("\nVisit Sequence");
         for (int i = 0; i < this.size; i++) {
             for (int j = 0; j < this.size; j++) {
                 System.out.print(this.image[i][j][1] + "  ");
             }
             System.out.println();
         }
-        System.out.println("Color Change Sequence");
+        System.out.println("\nColor Change Sequence");
         for (int i = 0; i < this.size; i++) {
             for (int j = 0; j < this.size; j++) {
                 System.out.print(this.image[i][j][2] + "  ");

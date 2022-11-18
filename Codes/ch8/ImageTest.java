@@ -18,7 +18,6 @@ public class ImageTest {
         image.eraseBlob(row, col);
         System.out.println("Erased Blob at (" + row + ", " + col + ")");
         image.displayImage();
-        System.out.println("\n");
         image.displayInfo();
     }
 }
