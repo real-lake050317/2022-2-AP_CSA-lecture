@@ -1,0 +1,16 @@
+recursion 상에서 어느 셀이 가장 마지막으로 inspection 되는지, 색이 바뀌는지 확인해야 함.
+
+문장 palindrome 구현법
+1. Blanks 없애기
+2. puctuation 없애기
+3. lower case로 바꾸기
+
+Selection Sort
+1. 0번째 index부터 시작해서, 그 다음 index부터 끝까지 비교해서, 가장 작은 값을 찾는다. (index와 value를 저장)
+2. 그 값을 0번째 index와 swap한다. (최소값이 됨)
+3. 1번째 index부터 시작해서, 그 다음 index부터 끝까지 비교해서, 가장 작은 값을 찾는다.
+4. 그 값을 1번째 index와 swap한다.
+...
+
+Selection Sort의 시간 복잡도 O(n^2)
+
