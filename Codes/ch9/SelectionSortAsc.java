@@ -1,6 +1,6 @@
 package Codes.ch9;
 
-public class SelectionSort {
+public class SelectionSortAsc {
     public static void sort(int[] a) {
         int n = a.length;
 

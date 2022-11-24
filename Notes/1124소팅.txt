@@ -14,3 +14,4 @@ Selection Sort
 
 Selection Sort의 시간 복잡도 O(n^2)
 
+Insertion Sort
