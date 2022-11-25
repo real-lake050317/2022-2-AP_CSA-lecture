@@ -1,3 +1,4 @@
+package Codes.ch9;
 import java.util.*;
 
 public class SortTest {
@@ -8,8 +9,7 @@ public class SortTest {
 
 		if(args.length == 0) {
 			size = 10;
-        }
-		else {
+        } else {
 			size = Integer.parseInt(args[0]);
         }
 
