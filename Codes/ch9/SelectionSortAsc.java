@@ -1,6 +1,6 @@
 package Codes.ch9;
-
 public class SelectionSortAsc {
+    public static int cnt = 0;
     public static void sort(int[] a) {
         int n = a.length;
 
@@ -9,6 +9,7 @@ public class SelectionSortAsc {
             int lowkey = a[i];
 
             for (int j = i + 1; j < n; j++) {
+                cnt++;
                 if (a[j] < lowkey) {
                     lowest = j;
                     lowkey = a[j];
