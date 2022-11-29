@@ -61,10 +61,10 @@ public class InsertionSort{
                 operationCount++;
                 j--;
             }
-            for (int z = i; z > j+1; z--){
-                res[z]=res[z-1];
+            for (int z = i; z > j + 1; z--){
+                res[z] = res[z - 1];
             }
-            res[j+1]=key;
+            res[j + 1] = key;
         }
         return res;
     }    
@@ -81,13 +81,13 @@ public class InsertionSort{
         }
         int[] asc = ascendingInsertionSort(list);
         System.out.println(operationCount);
-        operationCount=0;
+        operationCount = 0;
         int[] des = descendingInsertionSort(list);
         System.out.println(operationCount);
-        operationCount=0;
+        operationCount = 0;
         int[] asc1 = ascendingInsertionSortShiftLater(list);
         System.out.println(operationCount);
-        operationCount=0;
+        operationCount = 0;
         int[] des1 = descendingInsertionSortShiftLater(list);
         System.out.println(operationCount);
         printArr(list);
