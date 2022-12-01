@@ -1,2 +1,12 @@
 Merge Sort
 
+Input: 배열로 들어올때
+알고리즘 설계 및 구현
+
+1. T.C
+2. R.C
+3. S.P
+
+Termination Condition
+언제까지 나눌건지?
+
