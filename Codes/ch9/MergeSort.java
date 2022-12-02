@@ -1,69 +1,74 @@
+import java.util.concurrent.ExecutionException;
+
 public class MergeSort {
-    public void merge(int[] arr, int l, int m, int r) {
-        int n1 = m - l + 1;
-        int n2 = r - m;
+    public void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
 
-        int left[] = new int[n1];
-        int right[] = new int[n2];
+        int leftArr[] = new int[n1];
+        int rightArr[] = new int[n2];
 
-        for (int i = 0; i < n1; i++) {
-            left[i] = arr[l + i];
+        for (int i = 0; i < n1; ++i) {
+            leftArr[i] = arr[left + i];
         }
-        for (int i = 0; i < n2; i++) {
-            right[i] = arr[m + 1 + i];
+        for (int i = 0; i < n2; ++i) {
+            rightArr[i] = arr[mid + 1 + i];
         }
 
         int i = 0, j = 0;
-        int k = 0;
+        int k = 1;
+
         while (i < n1 && j < n2) {
-            if (left[i] <= right[j]) {
-                arr[k] = left[i];
+            if (leftArr[i] < rightArr[j]) {
+                arr[k] = leftArr[i];
                 i++;
             } else {
-                arr[k] = right[j];
+                arr[k] = rightArr[j];
                 j++;
             }
             k++;
         }
 
         while (i < n1) {
-            arr[k] = left[i];
+            arr[k] = leftArr[i];
             i++;
             k++;
         }
         while (j < n2) {
-            arr[k] = right[j];
+            arr[k] = rightArr[j];
             j++;
             k++;
         }
     }
 
-    public void sort(int[] arr, int l, int r) {
-        if (l < r) {
-            int m = (l + r) / 2;
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
+    public void sort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            sort(arr, left, mid);
+            sort(arr, mid + 1, right);
 
-            merge(arr, l, m, r);
+            merge(arr, left, mid, right);
         }
     }
 
     public static void main(String[] args) {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
+        int arr[] = { 5, 8, 10, 4, 5, 9, -4, 3, 1, -7 };
 
-        System.out.println("Given Array");
+        System.out.println("Given Array\n");
 
-        for (int i = 0; i < arr.length; ++i)
+        for (int i = 0; i < arr.length; ++i) {
             System.out.print(arr[i] + " ");
+        }
         System.out.println();
 
         MergeSort ob = new MergeSort();
         ob.sort(arr, 0, arr.length - 1);
 
         System.out.println("\nSorted array");
-        
-        for (int i = 0; i < arr.length; ++i)
+
+        for (int i = 0; i < arr.length; ++i) {
             System.out.print(arr[i] + " ");
+        }
         System.out.println();
     }
 }
