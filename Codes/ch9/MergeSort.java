@@ -11,12 +11,12 @@ public class MergeSort {
         for (int i = 0; i < n1; ++i) {
             leftArr[i] = arr[left + i];
         }
+        
         for (int i = 0; i < n2; ++i) {
             rightArr[i] = arr[mid + 1 + i];
         }
 
-        int i = 0, j = 0;
-        int k = 1;
+        int i = 0, j = 0, k = 1;
 
         while (i < n1 && j < n2) {
             if (leftArr[i] < rightArr[j]) {
@@ -44,6 +44,7 @@ public class MergeSort {
     public void sort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
+
             sort(arr, left, mid);
             sort(arr, mid + 1, right);
 
@@ -59,6 +60,7 @@ public class MergeSort {
         for (int i = 0; i < arr.length; ++i) {
             System.out.print(arr[i] + " ");
         }
+
         System.out.println();
 
         MergeSort ob = new MergeSort();
@@ -69,6 +71,7 @@ public class MergeSort {
         for (int i = 0; i < arr.length; ++i) {
             System.out.print(arr[i] + " ");
         }
+
         System.out.println();
     }
 }
