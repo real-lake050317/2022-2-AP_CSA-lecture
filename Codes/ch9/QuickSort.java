@@ -30,11 +30,11 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] arr = { 5, 7, 2, 9, 11, 3, 4, 10, 1, -5 };
 
-        System.out.println("Original array: ");
+        System.out.println("\nOriginal array: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        System.out.println();
+        System.out.println("\n");
 
         sort(arr, 0, arr.length - 1);
 
@@ -42,6 +42,6 @@ public class QuickSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        System.out.println();
+        System.out.println("\n");
     }
 }
